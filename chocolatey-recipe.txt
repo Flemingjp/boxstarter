@@ -1,11 +1,13 @@
- # Choco Packages
+# Choco Packages
 choco install git
 choco install powershell-core
 choco install microsoft-windows-terminal
-choco install ccleaner
+choco install gsudo
 choco install firefox
 choco install miniconda3
 choco install microsoft-teams
+choco install office365business
+choco install onenote --ignore-checksum
 choco install spotify
 choco install vlc
 choco install zotero
@@ -18,3 +20,7 @@ Add-PoshGitToProfile -AllHosts
 # Windows Settings
 Install-WindowsUpdate -getUpdatesFromMS -acceptEula -SuppressReboots
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives  -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+
+# Registry Edits
+reg import ./regedits/disable_cortana.reg
+reg import ./regedits/disable_weather_taskbar.reg

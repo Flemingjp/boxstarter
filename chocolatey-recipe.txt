@@ -12,6 +12,11 @@ choco install spotify
 choco install vlc
 choco install zotero
 choco install 7zip
+choco install discord
+choco install gimp
+choco install inkscape
+choco install vscode
+choco install steam
 
 # Posh-Git Module
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
@@ -24,3 +29,4 @@ Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives  -EnableShowFileE
 # Registry Edits
 reg import ./regedits/disable_cortana.reg
 reg import ./regedits/disable_weather_taskbar.reg
+reg import ./regedits/enable_photo_viewer.reg

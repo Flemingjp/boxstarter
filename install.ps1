@@ -3,9 +3,11 @@ cd $env:USERPROFILE
 
 ## Choco Packages
 choco install git
+choco install gpg4win
 choco install powershell-core
 choco install microsoft-windows-terminal
 choco install gsudo
+choco install ffmpeg
 choco install firefox
 choco install miniconda3 --params="'/InstallationType:JustMe /AddToPath:1'"
 choco install spotify
@@ -22,17 +24,17 @@ git clone https://github.com/Flemingjp/boxstarter.git
 conda init
 
 ## Install conda environments
-# foreach ($yamlFile in Get-ChildItem -Path "./conda" -Filter "*.yml") {
-#     # Install Conda environment from the YAML file
-#     $process = Start-Process -FilePath "conda" -ArgumentList "env create -f `"$($yamlFile.FullName)`"" -PassThru -Wait -NoNewWindow
+foreach ($yamlFile in Get-ChildItem -Path "./conda" -Filter "*.yml") {
+    # Install Conda environment from the YAML file
+    $process = Start-Process -FilePath "conda" -ArgumentList "env create -f `"$($yamlFile.FullName)`"" -PassThru -Wait -NoNewWindow
 
-#     # Check the exit code of the process
-#     if ($process.ExitCode -eq 0) {
-#         Write-Host "Environment created successfully from $($yamlFile.Name)" -ForegroundColor Green
-#     } else {
-#         Write-Host "Failed to create environment from $($yamlFile.Name)" -ForegroundColor Red
-#     }
-# }
+    # Check the exit code of the process
+    if ($process.ExitCode -eq 0) {
+        Write-Host "Environment created successfully from $($yamlFile.Name)" -ForegroundColor Green
+    } else {
+        Write-Host "Failed to create environment from $($yamlFile.Name)" -ForegroundColor Red
+    }
+}
 
 ## Install Powershell profile
 Copy-Item -Path "./powershell/profile.ps1" -Destination $PROFILE -Force

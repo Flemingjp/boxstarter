@@ -1,0 +1,35 @@
+#################################################################
+#     _                       _                    _            # 
+#    |_) |_      _ o  _  _   |_) _|_ |_   _  ._    _)  /| /|    #
+#    |   | | \/ _> | (_ _>   | \/ |_ | | (_) | |   _) o |  |    #
+#            /                 /                                #
+#                                                               #
+#    Basic Python 3.11 environment for general physics code.    #
+#   Installs latest Python 3.11 minor version, as 3.11 in now   #
+#    only recieves security patches and enters EOL 2027-10      #
+#################################################################
+
+name: physics311
+
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - python=3.11.*
+  - pip
+  - rydiqule::arc-alkali-rydberg-calculator==3.4.0
+  - imageio==2.34.1
+  - matplotlib==3.8.4
+  - numba==0.59.1
+  - numpy==1.26.4
+  - opencv==4.8.1
+  - pandas==2.2.2
+  - pillow==10.3.0
+  - pyserial==3.5
+  - scikit-image==0.22.0
+  - scipy==1.13.0
+  - tifffile==2024.5.3
+  - tqdm==4.66.4
+  - pip:
+      - diffractio==0.2.4
